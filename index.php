@@ -10,18 +10,18 @@
 
         if(!isset($_SESSION['LOGIN'])){
 
-            if(isset($_session['login']))
+            if(isset($_SESSION['login']))
                 
-                if(isset(@_post['acao'])){
+                if(isset($_POST['acao'])){
                     $login = 'patryck'; 
-                    $senha = '12345' 
+                    $senha = '12345'; 
 
-                    $loginform = $_post['login'];
-                    $senhaform = $_post['senha'];
+                    $loginform = $_POST['login'];
+                    $senhaform = $_POST['senha'];
 
                     if($login == $loginform && $senha == $senhaform){
                         //logado com sucesso  //posso colocar login no session , tambem funciona 
-                        $_session['loghin'] = true;
+                        $_SEESION['loghin'] = true;
                         header ('location: index.php');
                     }else{
                         //algum erro ocorreu
@@ -32,8 +32,8 @@
 
             include('login.php');
         }else{
-            if(isset($_get['logout'])){
-                unset($_session['login']);
+            if(isset($_GRT['logout'])){
+                unset($_SESSION['login']);
                 header('location: index.php');
             }
             include('home.php');
